@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Resume Builder</title>
+
+    <script type="text/javascript" language="javascript" src=""></script>
+</head>
+<body class="form-body">
+
+<div class="header-form">
+    <h1>Resume Builder</h1>
+
+    <form method="get" action="#" id="headerForm">
+
+        <hr>
+        <input type="text" name="name" id="name" placeholder="Name" /> <br/>
+        <input type="text" name="phone" id="phone" placeholder="Phone" /><br/>
+        <input type="text" name="email" id="email" placeholder="Email" /><br/>
+        <input type="text" name="website" id="website" placeholder="Website" /><br/>
+        <label>Upload Headshot</label> <input type = "file" name = "photo"/> <br/>
+        <label>Border Color [make white if more than one page]</label>
+        <input type="color" name="resumeBorder"/><br/>
+
+    </form>
+</div>
+
+<div class="education-form">
+    <h2>Education</h2>
+
+    <form method="get" action="#" id="education">
+
+        <hr>
+        <div class="educationTable">
+    <table>
+        <tr>
+            <td><input type="text" name="schoolName" id="school1" placeholder="School Name" /></td>
+            <td><input type="text" name="city" id="city1" placeholder="City, State" /></td>
+            <td><label>Grad Date:</label><input type="date" name="date" id="date1" placeholder="Today" /></td>
+        </tr>
+        <tr>
+            <td>
+                <select name="degree" id="degree1">
+                    <option>Your Degree...</option>
+                    <option>High School</option>
+                    <option>BA/BS</option>
+                    <option>MS</option>
+                    <option>PhD</option>
+                    <option>MBA</option>
+                    <option>Certificate</option>
+                </select>
+            </td>
+            <td>
+                
+                <select name="major" id="major1">
+                    <option>Your Major...</option>
+                    <option>Accounting</option>
+                    <option>Aerospace Engineering</option>
+                    <option>Anthropology</option><option>Art History</option>
+                    <option>Biochemistry</option><option>Biology</option><option>Business</option>
+                    <option>Chemical Engineering</option><option>Chemistry</option>
+                    <option>Civil Engineering</option><option>Coding School</option>
+                    <option>Cognitive Science</option><option>Communication</option>
+                    <option>Computer Engineering</option><option>Computer Science</option>
+                    <option>Electrical Engineering</option><option>English</option>
+                    <option>Environmental Engineering</option><option>Environmental Science</option>
+                    <option>Finance</option><option>Fine Art</option>
+                    <option>Gender Studies</option><option>Graphic Design</option>
+                    <option>Health and Human Sciences</option><option>History</option>
+                    <option>Industrial Engineering</option><option>Latin American Studies</option>
+                    <option>Linguistics</option><option>Management Engineering</option><option>Marketing</option>
+                    <option>Mathematics</option><option>Mechanical Engineering</option><option>Music</option>
+                    <option>Non-Technical Major</option><option>Philosophy</option><option>Physics</option>
+                    <option>Political Science</option><option>Product Design</option><option>Psychology</option>
+                    <option>Public Relations</option><option>Religious Studies</option><option>Robotics</option>
+                    <option>Sociology</option><option>Software Engineering</option><option>Sports Management</option>
+                    <option>Statistics</option><option>Theatre</option><option>Undeclared</option>
+                    <option>Visual Design</option><option>Writing</option>
+                </select>
+            </td>
+        </tr>
+    </table>
+    
+        </div>
+
+        <br/><button type="submit" id="addEducation"> Add Education</button>
+    </form>
+</div>
+<div class="job-form">
+    <h2>Job Experience</h2>
+
+    <form method="get" action="#" id="jobForm">
+
+        <hr>
+        <input type="text" name="company" id="company" placeholder="Company" /> 
+        <input type="text" name="job" id="job" placeholder="Work Title" /><br/>
+        <label>Date From:</label><input type="date" name="date" id="dateFrom" placeholder="" />
+        <label>Date To:</label><input type="date" name="date" id="dateTo" placeholder="Current Job" /><br/>
+        <textarea placeholder="Enter a description..."></textarea>
+
+        
+    </form>
+    <form method="get" action="#" id="addForm">
+        <br/><button type="button" id="addJob"> Add Job</button>
+    </form>
+</div>
+
+<div>
+    <form method="get" action="#" id="submitForm">
+        <br/><button type="submit" id="createResume"> Create Resume</button>
+    </form>
+</div>
+<div id="errors" class="visible">
+</div>
+
+</body>
+</html>
