@@ -9,6 +9,16 @@ function submitForm()
     PrintForm();
     RemoveForm();
 }
+
+function PrintForm()
+{
+    document.getElementById("resume").style.border = "thick solid " + MyBorder();
+    Name();
+    PhoneEmailWebsite();
+    Education();
+    Jobs();
+ }
+    
 function RemoveForm()
 {
     var bodySection = document.getElementById("mainBody");
@@ -62,15 +72,66 @@ function PhoneEmailWebsite()
     resume.appendChild(tag);
 }
 
-function SchoolName()
+function Education()
 {
-    var schoolName = document.getElementById("school1").value;
-    
-    return schoolName;
+    var educations = document.getElementsByClassName("education");
+    //educations.forEach(MyEducation);
+    for(var i = 0; i < educations.length; i++)
+    {
+        MyEducation(i);
+    }
 }
-function PrintForm()
+
+function MyEducation(index)
 {
-    Name();
-    PhoneEmailWebsite();
-    document.getElementById("resume").style.border = "thick solid " + MyBorder();
+    Appender("resume", "h2", "Education");
+    Appender("resume", "hr", "");
+    //School Name
+    Appender("resume", "h3", document.getElementById("school" + index).value);
+    //City, State
+    Appender("resume", "span", document.getElementById("city" + index).value);
+    //Grad Date
+    Appender("resume", "span", ("    " + document.getElementById("date" + index).value));
+
+    Appender("resume", "br", "");
+    //Degree
+    Appender("resume", "span", document.getElementById("degree" + index).value);
+    //Major
+    Appender("resume", "span", ("    " + document.getElementById("major" + index).value));
+}
+
+    function Jobs()
+    {
+        var educations = document.getElementsByClassName("education");
+        //educations.forEach(MyEducation);
+        for(var i = 0; i < educations.length; i++)
+        {
+            MyJobs(i);
+        }
+    }
+
+    function MyJobs(index)
+    {
+        Appender("resume", "h2", "Job Experience");
+        Appender("resume", "hr", "");
+        //Company
+        Appender("resume", "h3", document.getElementById("company" + index).value);
+        //Job
+        Appender("resume", "span", document.getElementById("job" + index).value);
+        //Date From
+        Appender("resume", "span", ("    " + document.getElementById("dateFrom" + index).value));
+        //Date To
+        Appender("resume", "span", (", " + document.getElementById("dateTo" + index).value));
+        Appender("resume", "br", "");
+        //Description
+        Appender("resume", "span", (document.getElementById("description" + index).value));
+    }
+
+function Appender(ID, tag, text)
+{
+    var resume = document.getElementById(ID);
+    var tag = document.createElement(tag);
+    var text = document.createTextNode(text);
+    tag.appendChild(text);
+    resume.appendChild(tag);
 }
