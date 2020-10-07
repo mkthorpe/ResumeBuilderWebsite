@@ -4,9 +4,11 @@
     <meta charset="utf-8"/>
     <title>Resume Builder</title>
 
-    <script type="text/javascript" language="javascript" src=""></script>
+    <script type="text/javascript" language="javascript" src="ResumeBuilderJS.js"></script>
 </head>
-<body class="form-body">
+<body class="form-body" id="mainBody">
+
+<main id="entireForm">
 
 <div class="header-form">
     <h1>Resume Builder</h1>
@@ -14,13 +16,13 @@
     <form method="get" action="#" id="headerForm">
 
         <hr>
-        <input type="text" name="name" id="name" placeholder="Name" /> <br/>
-        <input type="text" name="phone" id="phone" placeholder="Phone" /><br/>
-        <input type="text" name="email" id="email" placeholder="Email" /><br/>
-        <input type="text" name="website" id="website" placeholder="Website" /><br/>
-        <label>Upload Headshot</label> <input type = "file" name = "photo"/> <br/>
+        <input type="text" id="name" placeholder="Name" /> <br/>
+        <input type="text"  id="phone" placeholder="Phone" /><br/>
+        <input type="text" id="email" placeholder="Email" /><br/>
+        <input type="text"  id="website" placeholder="Website" /><br/>
+        <!--<label>Upload Headshot</label> <input type = "file" name = "photo" id="photo"/> <br/>-->
         <label>Border Color [make white if more than one page]</label>
-        <input type="color" name="resumeBorder"/><br/>
+        <input type="color" name="resumeBorder" id="color"/><br/>
 
     </form>
 </div>
@@ -28,19 +30,19 @@
 <div class="education-form">
     <h2>Education</h2>
 
-    <form method="get" action="#" id="education">
+    <form method="get" action="#" id="education" class="education">
 
         <hr>
         <div class="educationTable">
     <table>
         <tr>
-            <td><input type="text" name="schoolName" id="school1" placeholder="School Name" /></td>
-            <td><input type="text" name="city" id="city1" placeholder="City, State" /></td>
-            <td><label>Grad Date:</label><input type="date" name="date" id="date1" placeholder="Today" /></td>
+            <td><input type="text" name="schoolName" class="school" id="school0" placeholder="School Name" /></td>
+            <td><input type="text" name="city" id="city0" placeholder="City, State" /></td>
+            <td><label>Grad Date:</label><input type="date" name="date" id="date0" placeholder="Today" /></td>
         </tr>
         <tr>
             <td>
-                <select name="degree" id="degree1">
+                <select name="degree" id="degree0">
                     <option>Your Degree...</option>
                     <option>High School</option>
                     <option>BA/BS</option>
@@ -52,7 +54,7 @@
             </td>
             <td>
                 
-                <select name="major" id="major1">
+                <select name="major" id="major0">
                     <option>Your Major...</option>
                     <option>Accounting</option>
                     <option>Aerospace Engineering</option>
@@ -85,6 +87,7 @@
 
         <br/><button type="submit" id="addEducation"> Add Education</button>
     </form>
+    
 </div>
 <div class="job-form">
     <h2>Job Experience</h2>
@@ -92,11 +95,11 @@
     <form method="get" action="#" id="jobForm">
 
         <hr>
-        <input type="text" name="company" id="company" placeholder="Company" /> 
-        <input type="text" name="job" id="job" placeholder="Work Title" /><br/>
-        <label>Date From:</label><input type="date" name="date" id="dateFrom" placeholder="" />
-        <label>Date To:</label><input type="date" name="date" id="dateTo" placeholder="Current Job" /><br/>
-        <textarea placeholder="Enter a description..."></textarea>
+        <input type="text" name="company" id="company0" placeholder="Company" /> 
+        <input type="text" name="job" id="job0" placeholder="Work Title" /><br/>
+        <label>Date From:</label><input type="date" name="date" id="dateFrom0" placeholder="" />
+        <label>Date To:</label><input type="date" name="date" id="dateTo0" placeholder="Current Job" /><br/>
+        <textarea id="description0" placeholder="Enter a description..."></textarea>
 
         
     </form>
@@ -107,11 +110,14 @@
 
 <div>
     <form method="get" action="#" id="submitForm">
-        <br/><button type="submit" id="createResume"> Create Resume</button>
+        <br/><button type="submit" id="createResume" onclick="submitForm()"> Create Resume</button>
     </form>
 </div>
 <div id="errors" class="visible">
 </div>
-
+</main>
+<main id="resume">
+    
+</main>
 </body>
 </html>
